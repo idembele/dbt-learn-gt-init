@@ -33,7 +33,8 @@ final as (
     from orders
 
     left join order_payments using (order_id)
-
+    
+{#ceci est un commentaire#}
 )
 
 select * from final
