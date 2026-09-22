@@ -1,0 +1,28 @@
+models:
+  - name: stg_jaffle_shop__customers
+    columns:
+      - name: customer_id
+        data_tests:
+          - not_null
+          - unique
+  - name: stg_jaffle_shop__orders
+    columns:
+      - name: order_id
+        data_tests:
+          # Permet de verifier la clé primaire
+          - not_null
+          - unique
+      - name: status
+        data_tests:
+          # Permet de verifier une liste de valeurs acceptées
+          - accepted_values:
+              arguments:
+                values: ['completed', 'placed', 'shipped', 'returned', 'return_pending']
+      - name: customer_id
+        data_tests:
+          # Permet de verifier la clé étragère
+          - relationships:
+              arguments:
+                to: ref('stg_jaffle_shop__customers')
+                field: customer_id
+      
