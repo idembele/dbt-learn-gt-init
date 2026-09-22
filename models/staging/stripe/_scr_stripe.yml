@@ -1,9 +1,11 @@
 sources:   
   - name: stripe 
+    description: A clone of Payement sources
     database: raw
     schema: stripe
     tables:
       - name: payment
+        description: Raw of payment data
         config:
           freshness:
             warn_after: 

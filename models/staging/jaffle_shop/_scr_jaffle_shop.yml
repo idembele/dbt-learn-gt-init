@@ -1,12 +1,15 @@
 sources:
   - name: jaffle_shop 
+    description: A clone of a Postgres Database 
     database: raw
     schema: jaffle_shop
     tables:  
       - name: customers
+        description: Raw of customers data
         #On peut ajouter des tests de données sur les sources
         columns:
           - name: id
+            description: Primary Key of customers table
             data_tests:
               - not_null
               - unique
