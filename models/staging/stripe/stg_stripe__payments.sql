@@ -1,3 +1,10 @@
+{#{ config(materialized='table') }      Modif model output to table or view#}
+
+{#{ config(materialized='incremental') }        Incremental Append#}
+
+{#{ config(materialized='incremental',unique_key='customer_id') }       Incremental merge#}
+
+
 select
         id as payment_id,
         orderid as order_id,
