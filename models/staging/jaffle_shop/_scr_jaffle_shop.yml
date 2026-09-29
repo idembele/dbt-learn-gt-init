@@ -14,6 +14,15 @@ sources:
               - not_null
               - unique
       - name: orders
+        columns:
+          - name: status
+            description: Status of the transaction payement
+            data_tests:
+              - accepted_values:
+                  arguments:
+                    values: ['completed', 'placed', 'shipped', 'returned', 'return_pending']
+                    #
+      - name: customer_id
         config:
           freshness:
             warn_after: 
