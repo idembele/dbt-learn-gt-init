@@ -38,5 +38,7 @@ models:
       +materialized: view
     marts:
       +materialized: table
+    test_switch_env:
+     +schema: public  #si commente, je bascule sur default schema
 
     
