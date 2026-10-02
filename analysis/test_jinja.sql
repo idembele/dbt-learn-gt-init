@@ -5,7 +5,7 @@
         {% if not loop.last %}
             union all
         {% endif %}
-    {% endfor %} 
+{% endfor %} 
   
 
 
